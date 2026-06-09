@@ -20,6 +20,7 @@
 	export let saveSettings: Function;
 
 	let backgroundImageUrl = null;
+	let backgroundImageOpacity = 0.85;
 	let inputFiles = null;
 	let filesInputElement;
 
@@ -274,6 +275,7 @@
 		}
 
 		backgroundImageUrl = $settings?.backgroundImageUrl ?? null;
+		backgroundImageOpacity = $settings?.backgroundImageOpacity ?? 0.85;
 		webSearch = $settings?.webSearch ?? null;
 
 		textScale = $settings?.textScale ?? null;
@@ -679,6 +681,32 @@
 						>
 					</button>
 				</div>
+
+				{#if backgroundImageUrl !== null}
+					<div class="flex items-center gap-2 px-1 pb-1">
+						<span class="text-xs text-gray-500 dark:text-gray-400 w-24 shrink-0">
+							{$i18n.t('Overlay Opacity')}
+						</span>
+						<input
+							class="flex-1"
+							type="range"
+							min="0"
+							max="1"
+							step="0.05"
+							bind:value={backgroundImageOpacity}
+							on:change={() => {
+								saveSettings({ backgroundImageOpacity });
+							}}
+							aria-label={$i18n.t('Overlay Opacity')}
+							aria-valuemin="0"
+							aria-valuemax="1"
+							aria-valuenow={backgroundImageOpacity}
+						/>
+						<span class="text-xs text-gray-500 dark:text-gray-400 w-8 text-right">
+							{Math.round(backgroundImageOpacity * 100)}%
+						</span>
+					</div>
+				{/if}
 			</div>
 
 			<div>

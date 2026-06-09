@@ -209,6 +209,7 @@ type Settings = {
 	autoFollowUps?: boolean;
 	splitLargeChunks?(body: any, splitLargeChunks: any): unknown;
 	backgroundImageUrl?: null;
+	backgroundImageOpacity?: number;
 	landingPageMode?: string;
 	iframeSandboxAllowForms?: boolean;
 	iframeSandboxAllowSameOrigin?: boolean;
