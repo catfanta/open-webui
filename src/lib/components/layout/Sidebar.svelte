@@ -1025,7 +1025,7 @@
 						id="sidebar-webui-name"
 						class=" self-center font-medium text-gray-850 dark:text-white font-primary"
 					>
-						{$WEBUI_NAME}
+						认知模型测试
 					</div>
 				</a>
 				<Tooltip
