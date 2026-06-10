@@ -1048,7 +1048,7 @@
 		if (backendConfig) {
 			// Save Backend Status to Store
 			await config.set(backendConfig);
-			await WEBUI_NAME.set(backendConfig.name);
+			await WEBUI_NAME.set('认知模型测试');
 
 			if ($config) {
 				await setupSocket($config.features?.enable_websocket ?? true);
